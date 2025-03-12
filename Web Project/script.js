@@ -1,3 +1,19 @@
+let lastScrollPosition = 0;
+const scrollThreshold = 50;
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > scrollThreshold) {
+        navbar.classList.add('hidden');
+    } else {
+        navbar.classList.remove('hidden');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const newsData = [
         {
@@ -29,9 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let card = document.createElement("div");
         card.classList.add("news-card");
 
-
         card.innerHTML = `
-            <img src="${news.image}" alt="News Image">
+            <div class="img-container">
+                <img src="${news.image}" alt="News Image">
+            </div>
             <div class="content">
                 <div class="date-category">${news.date} | ${news.category}</div>
                 <h3>${news.title}</h3>
@@ -41,24 +58,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newsContainer.appendChild(card);
     });
-});
-
-// Previous scroll position
-let lastScrollPosition = 0;
-// How many pixels to scroll before showing/hiding navbar
-const scrollThreshold = 50;
-
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const currentScrollPosition = window.pageYOffset;
-
-    // Check if scrolling down and past the threshold
-    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > scrollThreshold) {
-        navbar.classList.add('hidden');
-    } else {
-        // Scrolling up or at the top
-        navbar.classList.remove('hidden');
-    }
-
-    lastScrollPosition = currentScrollPosition;
 });

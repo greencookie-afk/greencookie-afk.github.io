@@ -146,7 +146,7 @@
 
 .content {
     padding: 40px;
-    background: #e6f0ff;
+    background: rgb(226, 218, 255);
     min-height: 100vh;
     margin: 0;
 }
@@ -156,7 +156,12 @@
     font-weight: lighter;
     letter-spacing: 1.5px;
     color: rgb(26, 26, 26);
-    font-size: 2rem
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-top: 30px;
 }
 
 .news-container {
@@ -169,7 +174,7 @@
 
 #news-cards {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     margin-top: 40px;
     background-color: transparent;
     flex-wrap: wrap;
@@ -177,31 +182,74 @@
 }
 
 .news-card {
+    flex: 0 0 350px;
     display: flex;
     flex-direction: column;
-    font-family: inter;
-    height: 400px;
-    background: white;
-    border-radius: 4px;
+    height: 350px;
+    background: rgb(226, 218, 255);
+    cursor: pointer;
+    border-radius: 2px;
     overflow: hidden;
-    width: 350px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+
+.news-card .img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
 }
 
 .news-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+}
+
+.news-card:hover img {
+    transform: scale(1.2);
+}
+
+.news-card:hover {
+    transform: scale(1.05);
 }
 
 .news-card .content {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 10px;
     background: transparent;
     min-height: auto;
+}
+
+.news-card .date-category {
+    font-family: inter;
+    font-size: 13px;
+    color: rgb(44, 0, 204);
+}
+
+.news-card h3 {
+    font-family: montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.news-card p {
+    font-family: inter;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -216,6 +264,19 @@
 
     .navbar {
         padding: 40px 60px;
+    }
+
+    .news-container {
+        padding: 10px;
+    }
+    
+    #news-cards {
+        gap: 30px;
+        padding: 15px 0;
+    }
+    
+    .news-card {
+        flex: 0 0 300px;
     }
 }
 
