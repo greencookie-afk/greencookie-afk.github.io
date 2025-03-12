@@ -1,20 +1,13 @@
-let lastScrollPosition = 0;
-const scrollThreshold = 50;
 
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > scrollThreshold) {
-        navbar.classList.add('hidden');
-    } else {
-        navbar.classList.remove('hidden');
-    }
 
-    lastScrollPosition = currentScrollPosition;
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+
+
+
+
+
+=document.addEventListener("DOMContentLoaded", function () {
     const newsData = [
         {
             image: "https://res.cloudinary.com/ds2n1k6bz/image/upload/v1741771255/CARD-1_iv1xtp.webp",
