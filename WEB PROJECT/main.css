@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Anton&family=Bebas+Neue&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montaga&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600&family=Montserrat:wght@600&family=Orbitron:wght@400;500&display=swap');
 
 * {
     margin: 0;
@@ -73,7 +73,6 @@
     z-index: 0;
 }
 
-
 .hero-btn {
     position: absolute;
     bottom: 15vh;
@@ -86,16 +85,15 @@
     outline: 1px solid white;
     outline-offset: 3px;
     border: none;
-    font-family: Orbitron;
+    font-family: 'Orbitron', sans-serif;
     font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
     color: black;
     background-color: white;
     font-size: 20px;
-    transition: 0.3s;
-
     cursor: pointer;
 }
 
@@ -115,7 +113,8 @@
     cursor: pointer;
     animation: bounce 1.5s infinite;
     background-color: transparent;
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
 }
 
 .arrow-down:hover {
@@ -130,9 +129,7 @@
     font-size: 30px;
 }
 
-
 @keyframes bounce {
-
     0%,
     100% {
         transform: translateY(0) translateX(-50%);
@@ -143,27 +140,26 @@
     }
 }
 
-
+/* Content section styles */
 .content {
     padding: 40px;
     background: rgb(226, 218, 255);
     min-height: 100vh;
-    margin: 0;
 }
 
 .content h1 {
-    font-family: anton;
+    font-family: 'Anton', sans-serif;
     font-weight: lighter;
     letter-spacing: 1.5px;
     color: rgb(26, 26, 26);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
     text-align: center;
-    text-transform: uppercase;
     line-height: 1.2;
     margin-top: 30px;
 }
 
+/* News cards styles */
 .news-container {
     height: auto;
     width: 100%;
@@ -194,7 +190,6 @@
     transition: transform 0.3s ease;
 }
 
-
 .news-card .img-container {
     width: 100%;
     height: 250px;
@@ -206,7 +201,6 @@
     height: 250px;
     object-fit: cover;
     transition: transform 0.3s ease-out;
-    cursor: pointer;
 }
 
 .news-card:hover img {
@@ -228,13 +222,13 @@
 }
 
 .news-card .date-category {
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: rgb(44, 0, 204);
 }
 
 .news-card h3 {
-    font-family: montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 600;
     color: #000;
@@ -243,7 +237,7 @@
 }
 
 .news-card p {
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #666;
     line-height: 1.5;
@@ -252,7 +246,7 @@
     text-overflow: ellipsis;
 }
 
-
+/* Responsive styles */
 @media (max-width: 768px) {
     .logo {
         font-size: 1.5rem;
@@ -278,24 +272,14 @@
     .news-card {
         flex: 0 0 300px;
     }
-}
 
-@media (max-width: 768px) {
-    .main-txt {
-        font-size: 4rem;
-    }
-
-    .main-btn {
-        font-size: 10px;
+    .content h1 {
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 337px) {
-    .main-txt {
-        font-size: 2.8rem;
-    }
-
-    .main-btn {
-        font-family: 7px;
+    .content h1 {
+        font-size: 2rem;
     }
 }
