@@ -153,6 +153,21 @@
     font-size: 2rem
 }
 
+#news-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.news-card img {
+    object-fit: cover;
+}
+
+.news-card {
+    font-family: inter;
+}
+
+
 @media (max-width: 768px) {
     .logo {
         font-size: 1.5rem;
