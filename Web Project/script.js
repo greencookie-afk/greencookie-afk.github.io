@@ -42,3 +42,23 @@ document.addEventListener("DOMContentLoaded", function () {
         newsContainer.appendChild(card);
     });
 });
+
+// Previous scroll position
+let lastScrollPosition = 0;
+// How many pixels to scroll before showing/hiding navbar
+const scrollThreshold = 50;
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const currentScrollPosition = window.pageYOffset;
+
+    // Check if scrolling down and past the threshold
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > scrollThreshold) {
+        navbar.classList.add('hidden');
+    } else {
+        // Scrolling up or at the top
+        navbar.classList.remove('hidden');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+});
