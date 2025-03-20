@@ -40,6 +40,95 @@
             background-color: transparent;
         }
 
+        /* Mobile Menu Button Styles */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-icon {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .mobile-menu-icon::before,
+        .mobile-menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu-icon::before {
+            transform: translateY(-10px);
+        }
+
+        .mobile-menu-icon::after {
+            transform: translateY(10px);
+        }
+
+        /* Animated Menu Icon - Active State */
+        .mobile-menu.active .mobile-menu-icon {
+            background-color: transparent;
+        }
+
+        .mobile-menu.active .mobile-menu-icon::before {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu.active .mobile-menu-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        
+        .menu-container {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 120px 60px;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .menu-container.active {
+            right: 0;
+        }
+
+        .menu-container ul {
+            list-style: none;
+        }
+
+        .menu-container ul li {
+            margin: 30px 0;
+        }
+
+        .menu-container ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.3s;
+        }
+
+        .menu-container ul li a:hover {
+            color: #ccc;
+        }
+
         .hero-section {
             position: relative;
             display: flex;
@@ -68,6 +157,19 @@
             .logo {
                 font-size: 1.5rem;
             }
+            .mobile-menu {
+                display: block;
+            }
+            .menu-container {
+                width: 300px;
+                padding: 120px 40px;
+            }
+            .menu-container ul li {
+                margin: 20px 0;
+            }
+            .menu-container ul li a {
+                font-size: 1.2rem;
+            }
         }
     </style>
 
@@ -80,7 +182,18 @@
 <body>
     <header class="navbar">
         <div class="logo">Elbaf GAMES</div>
-        <button class="mobile-menu">&#9776;</button>
+        <button class="mobile-menu">
+            <span class="mobile-menu-icon"></span>
+        </button>
+        <nav class="menu-container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-section" id="home">

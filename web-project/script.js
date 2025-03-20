@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const navbar = document.querySelector('.navbar');
@@ -68,4 +67,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     newsContainer.appendChild(fragment);
+});
+
+// Menu Animation
+const mobileMenu = document.querySelector('.mobile-menu');
+const menuContainer = document.querySelector('.menu-container');
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    menuContainer.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuContainer.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        menuContainer.classList.remove('active');
+    }
+});
+
+// Close menu when clicking on a menu item
+const menuItems = document.querySelectorAll('.menu-container a');
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuContainer.classList.remove('active');
+    });
 });
