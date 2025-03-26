@@ -28,7 +28,7 @@
     color: #ffffff;
     font-size: 2.5rem;
     font-weight: bold;
-    font-family: bebas neue;
+    font-family: 'Bebas Neue', sans-serif;
     background-color: transparent;
 }
 
@@ -40,6 +40,87 @@
     color: #ffffff;
     font-size: 2.5rem;
     cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+}
+
+.mobile-menu-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.mobile-menu-icon::before,
+.mobile-menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.mobile-menu-icon::before {
+    transform: translateY(-10px);
+}
+
+.mobile-menu-icon::after {
+    transform: translateY(10px);
+}
+
+.mobile-menu.active .mobile-menu-icon,
+.mobile-menu.active .mobile-menu-icon::before,
+.mobile-menu.active .mobile-menu-icon::after {
+    display: none;
+    transition: 0s ease-out;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.151);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-container.active {
+    right: 0;
+}
+
+.menu-container ul {
+    list-style: none;
+}
+
+.menu-container ul li {
+    margin: 20px 0;
+}
+
+.menu-container ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.3s;
+}
+
+.menu-container ul li a:hover {
+    color: #ccc;
+}
+
+.menu-container ul li a {
+    font-family: orbitron;
+}
+
+.menu-container ul li a:hover {
+    color: red;
 }
 
 .hero-section {
@@ -130,6 +211,7 @@
 }
 
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateY(0) translateX(-50%);
@@ -143,7 +225,7 @@
 /* Content section styles */
 .content {
     padding: 40px;
-    background: rgb(226, 218, 255);
+    background: radial-gradient(circle at 50%, #0902686e 0, transparent 90%), radial-gradient(circle at 70% top, #000000 0, #04000a 60%);
     min-height: 100vh;
 }
 
@@ -151,12 +233,37 @@
     font-family: 'Anton', sans-serif;
     font-weight: lighter;
     letter-spacing: 1.5px;
-    color: rgb(26, 26, 26);
+    color: rgb(238, 238, 238);
     font-size: 3.5rem;
     margin-bottom: 10px;
     text-align: center;
     line-height: 1.2;
     margin-top: 30px;
+}
+
+.News-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.newsbtn {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    outline: 1px solid white;
+    outline-offset: 3px;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.newsbtn:hover {
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* News cards styles */
@@ -172,7 +279,6 @@
     display: flex;
     gap: 50px;
     margin-top: 40px;
-    background-color: transparent;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -182,9 +288,10 @@
     display: flex;
     flex-direction: column;
     height: 350px;
-    background: rgb(226, 218, 255);
+    background: rgba(151, 151, 151, 0.158);
+    backdrop-filter: blur(12px);
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 12px;
     overflow: hidden;
     width: 100%;
     transition: transform 0.3s ease;
@@ -212,7 +319,7 @@
 }
 
 .news-card .content {
-    padding: 10px;
+    padding: 20px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -221,29 +328,35 @@
     min-height: auto;
 }
 
-.news-card .date-category {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: rgb(44, 0, 204);
-}
-
 .news-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #000;
+    color: #f7f7f7;
     text-align: left;
     line-height: 1.2;
 }
 
-.news-card p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.news-card h2 {
+    color: rgb(134, 134, 134);
+    font-family: inter;
+    font-size: 15px;
+}
+
+.games-stn {
+    min-height: 100vh;
+}
+
+.games-stn h1{
+    font-family: 'Anton', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    color: rgb(34, 34, 34);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 40px;
 }
 
 /* Responsive styles */
@@ -263,12 +376,12 @@
     .news-container {
         padding: 10px;
     }
-    
+
     #news-cards {
         gap: 30px;
         padding: 15px 0;
     }
-    
+
     .news-card {
         flex: 0 0 300px;
     }

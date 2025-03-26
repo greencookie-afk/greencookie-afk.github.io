@@ -23,152 +23,17 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 40px 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: transparent;
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
         }
 
-        .logo {
-            color: #ffffff;
-            font-size: 2.5rem;
-            font-weight: bold;
-            font-family: 'Bebas Neue', sans-serif;
-            background-color: transparent;
-        }
-
-        /* Mobile Menu Button Styles */
         .mobile-menu {
             display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-            position: relative;
-        }
-
-        .mobile-menu-icon {
-            display: block;
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            position: relative;
-            transition: background-color 0.3s;
-        }
-
-        .mobile-menu-icon::before,
-        .mobile-menu-icon::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            transition: transform 0.3s;
-        }
-
-        .mobile-menu-icon::before {
-            transform: translateY(-10px);
-        }
-
-        .mobile-menu-icon::after {
-            transform: translateY(10px);
-        }
-
-        /* Animated Menu Icon - Active State */
-        .mobile-menu.active .mobile-menu-icon {
-            background-color: transparent;
-        }
-
-        .mobile-menu.active .mobile-menu-icon::before {
-            transform: rotate(45deg);
-        }
-
-        .mobile-menu.active .mobile-menu-icon::after {
-            transform: rotate(-45deg);
-        }
-
-        
-        .menu-container {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 500px;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.95);
-            padding: 120px 60px;
-            transition: right 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .menu-container.active {
-            right: 0;
-        }
-
-        .menu-container ul {
-            list-style: none;
-        }
-
-        .menu-container ul li {
-            margin: 30px 0;
-        }
-
-        .menu-container ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-family: 'Inter', sans-serif;
-            transition: color 0.3s;
-        }
-
-        .menu-container ul li a:hover {
-            color: #ccc;
-        }
-
-        .hero-section {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero-section video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                padding: 40px 60px;
-            }
-            .logo {
-                font-size: 1.5rem;
-            }
             .mobile-menu {
                 display: block;
-            }
-            .menu-container {
-                width: 300px;
-                padding: 120px 40px;
-            }
-            .menu-container ul li {
-                margin: 20px 0;
-            }
-            .menu-container ul li a {
-                font-size: 1.2rem;
             }
         }
     </style>
@@ -191,8 +56,8 @@
                 <li><a href="#games">Games</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Creator</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#developer">Developer</a></li>
             </ul>
         </nav>
     </header>
@@ -211,9 +76,16 @@
         <div class="news-container">
             <div id="news-cards"></div>
         </div>
+        <div class="News-btn">
+            <button class="newsbtn">View More</button>
+        </div>
+    </section>
+
+    <section class="games-stn">
+        <h1>EXPLORE GAMES</h1>
     </section>
 
     <script defer src="./web-project/script.js"></script>
 </body>
 
-</html> 
+</html>

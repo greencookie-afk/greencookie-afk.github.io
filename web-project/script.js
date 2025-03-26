@@ -35,17 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             image: "https://res.cloudinary.com/ds2n1k6bz/image/upload/v1741771256/CARD-2_idawfe.avif",
-            date: "March 11, 2025",
-            category: "Gaming",
-            title: "New Game Released",
-            description: "A brand-new action-packed game is hitting the market..."
+            title: "New Arcane Learnings"
         },
         {
             image: "https://res.cloudinary.com/ds2n1k6bz/image/upload/v1741771256/CARD-3_hs2kjo.avif",
-            date: "March 11, 2025",
-            category: "Gaming",
-            title: "New Game Released",
-            description: "A brand-new action-packed game is hitting the market..."
+            title: "March New Update 2025"
         }
     ];
 
@@ -59,9 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${image}" alt="${title}">
             </div>
             <div class="content">
-                <div class="date-category">${date} | ${category}</div>
                 <h3>${title}</h3>
-                <p>${description}</p>
+                <h2>INSIDER</h2>
             </div>`;
         fragment.appendChild(card);
     });
