@@ -117,10 +117,13 @@
 
 .menu-container ul li a {
     font-family: orbitron;
+    transition: 0.2s ease-in-out;
 }
 
 .menu-container ul li a:hover {
     color: red;
+    font-size: 1.2rem;
+    
 }
 
 .hero-section {
@@ -230,15 +233,13 @@
 }
 
 .content h1 {
-    font-family: 'Anton', sans-serif;
-    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
     letter-spacing: 1.5px;
-    color: rgb(238, 238, 238);
-    font-size: 3.5rem;
+    color: rgb(212, 208, 208);
+    font-size: 2rem;
     margin-bottom: 10px;
-    text-align: center;
-    line-height: 1.2;
-    margin-top: 30px;
+    text-align:center;
 }
 
 .News-btn {
@@ -266,7 +267,7 @@
     cursor: pointer;
 }
 
-/* News cards styles */
+
 .news-container {
     height: auto;
     width: 100%;
@@ -277,7 +278,7 @@
 
 #news-cards {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     margin-top: 40px;
     flex-wrap: wrap;
     justify-content: center;
@@ -287,11 +288,11 @@
     flex: 0 0 350px;
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 320px;
     background: rgba(151, 151, 151, 0.158);
     backdrop-filter: blur(12px);
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     width: 100%;
     transition: transform 0.3s ease;
@@ -344,22 +345,191 @@
 }
 
 .games-stn {
-    min-height: 100vh;
+    padding: 40px;
+    background: radial-gradient(circle at 50%, #0c00b16e 0, transparent 90%), radial-gradient(circle at 70% top, #410009 0, #000000 60%);
+    min-height: auto;
 }
 
-.games-stn h1{
-    font-family: 'Anton', sans-serif;
-    font-weight: lighter;
-    letter-spacing: 1.5px;
-    color: rgb(34, 34, 34);
-    font-size: 3.5rem;
+.games-header {
+    display: flex;
+    justify-content: space-between; /* Align "Explore" and search bar on opposite sides */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 20px;
+}
+
+.games-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+    color: rgb(212, 208, 208);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.search-bar-container {
+    margin: 0;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    background-color: #cccccc25;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.store-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.store-card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.store-card:hover {
+    transform: scale(1.05);
+}
+
+.store-card-img img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.store-card-content {
+    padding: 15px;
+    color: #fff;
+}
+
+.store-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-    text-align: center;
-    line-height: 1.2;
-    margin-top: 40px;
 }
 
-/* Responsive styles */
+.store-card-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.store-card-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ccc;
+}
+
+.browse-section {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.browse-section h1{
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.category-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    height: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+.category-overlay p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Explore-btn {
+    text-align: center;
+    margin-top: 50px; /* Adjusted margin for better spacing */
+}
+
+.explorebtn {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    outline: 1px solid white;
+    outline-offset: 3px;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.explorebtn:hover {
+    color: black;
+    background-color: white;
+    font-size: 20px;
+}
+
 @media (max-width: 768px) {
     .logo {
         font-size: 1.5rem;
@@ -387,12 +557,65 @@
     }
 
     .content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .games-stn h1{
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .store-cards-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+        max-height: 500px; /* Limit the height of the container */
+        overflow-y: auto; /* Add vertical scrolling within the container */
+        padding-right: 10px; /* Add padding for scrollbar space */
+    }
+
+    .store-card {
+        height: 150px; /* Reduce card height */
+        display: flex;
+        flex-direction: row; /* Arrange content horizontally */
+        gap: 10px;
+    }
+
+    .store-card-img img {
+        width: 120px; /* Adjust image width */
+        height: 100%; /* Maintain aspect ratio */
+        object-fit: cover;
+    }
+
+    .store-card-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .store-card-header h3 {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .store-card-content p {
+        font-size: 0.8rem; /* Adjust font size */
     }
 }
 
-@media (max-width: 337px) {
+@media (max-width: 400px) {
     .content h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .search-bar {
+        display: none;
     }
 }

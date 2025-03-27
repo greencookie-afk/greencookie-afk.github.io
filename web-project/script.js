@@ -28,10 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newsData = [
         {
             image: "https://res.cloudinary.com/ds2n1k6bz/image/upload/v1741771255/CARD-1_iv1xtp.webp",
-            date: "March 11, 2025",
-            category: "Gaming",
             title: "New Game Released",
-            description: "A brand-new action-packed game is hitting the market..."
         },
         {
             image: "https://res.cloudinary.com/ds2n1k6bz/image/upload/v1741771256/CARD-2_idawfe.avif",

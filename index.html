@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELBAF GAMES</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600&family=Montserrat:wght@600&family=Orbitron:wght@400;500&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600&family=Montserrat:wght@600&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600&family=Montserrat:wght@600&family=Orbitron:wght@400;500&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600&family=Montserrat:wght@600&family=Orbitron:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -71,18 +79,96 @@
         <div class="arrow-down">↓</div>
     </section>
 
+    <section class="games-stn" id="games">
+        <div class="games-header">
+            <h1>Explore</h1>
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search Games">
+            </div>
+        </div>
+        <div class="store-cards-container">
+            <div class="store-card">
+                <div class="store-card-img">
+                    <img src="./Assets/Tsushima background/wallpapersden.com_k-ghost-of-tsushima_3840x2160.jpg"
+                        alt="Game 1">
+                </div>
+                <div class="store-card-content">
+                    <div class="store-card-header">
+                        <h3>Ghost of Tsushima</h3>
+                    </div>
+                    <p>$49.99</p>
+                </div>
+            </div>
+            <div class="store-card">
+                <div class="store-card-img">
+                    <img src="./Assets/Tsushima background/elden ring.jpg" alt="Game 2">
+                </div>
+                <div class="store-card-content">
+                    <div class="store-card-header">
+                        <h3>Elden Ring</h3>
+                    </div>
+                    <p>$59.99</p>
+                </div>
+            </div>
+            <div class="store-card">
+                <div class="store-card-img">
+                    <img src="./Assets/Tsushima background/cyberpunk-2077-nvidia-geforce-e3-2019-rtx-on-4k-in-game-screenshot-011.png"
+                        alt="Game 3">
+                </div>
+                <div class="store-card-content">
+                    <div class="store-card-header">
+                        <h3>CyberPunk 2077</h3>
+                    </div>
+                    <p>$39.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="browse-section">
+            <h1>Browse By Category</h1>
+            <div class="category-cards-container">
+                <div class="category-card">
+                    <img src="https://img.freepik.com/free-photo/world-collapse-doomsday-scene-digital-painting_456031-63.jpg"
+                        alt="Action">
+                    <div class="category-overlay">
+                        <p>Action</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://wallpapercat.com/w/full/a/6/5/1507536-3840x2160-desktop-4k-role-playing-game-background.jpg"
+                        alt="Role-Playing">
+                    <div class="category-overlay">
+                        <p>Role-Playing</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/ncom/software/switch/70010000017881/b60a8dacedc67d684625fc3f4fe7706364327ae72d8aad703338f4c6e563dfb4"
+                        alt="Strategy">
+                    <div class="category-overlay">
+                        <p>Strategy</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2L-lUMZhfji7yG11plPNbng8nJZG01350Q&s"
+                        alt="Adventure">
+                    <div class="category-overlay">
+                        <p>Adventure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Explore-btn" id="news">
+            <button class="explorebtn">Explore Games</button>
+        </div>
+    </section>
+
     <section class="content">
-        <h1>THE LATEST NEWS</h1>
+        <h1>LATEST NEWS</h1>
         <div class="news-container">
             <div id="news-cards"></div>
         </div>
         <div class="News-btn">
             <button class="newsbtn">View More</button>
         </div>
-    </section>
-
-    <section class="games-stn">
-        <h1>EXPLORE GAMES</h1>
     </section>
 
     <script defer src="./web-project/script.js"></script>
